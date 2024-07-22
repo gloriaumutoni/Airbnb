@@ -20,7 +20,34 @@ function App() {
             </p>
           </div>
         </div>
-        <Cards />
+        <div className="flex gap-3">
+        <Cards 
+         img='/assets/image12.svg'
+         status='SOLD OUT'
+         rate='5.0'
+         country='(6) USA'
+         title='Life lessons with Katie Zaferes'
+         amount='From $136'
+         person='/ person'
+        />
+         <Cards 
+         img='/assets/wedding-photography1.svg'
+         status='ONLINE'
+         rate='5.0'
+         country='(6) USA'
+         title='Life lessons with Katie Zaferes'
+         amount='From $136'
+         person='/ person'
+        />
+         <Cards 
+         img='/assets/mountain-bike1.svg'
+         rate='5.0'
+         country='(6) USA'
+         title='Life lessons with Katie Zaferes'
+         amount='From $136'
+         person='/ person'
+        />
+        </div>
       </div>
     </div>
   );

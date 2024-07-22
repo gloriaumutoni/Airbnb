@@ -1,18 +1,23 @@
-const Cards = () => {
+const Cards = (props) => {
   return (
-    <div>
-      <div className="card1 bg-white">
-        <div className="relative bg-[url('/assets/mountain-bike1.svg')]">
-          <div className="top-2 absolute">SOLD OUT</div>
+    <div className="flex">
+      <div className="bg-white">
+        <div className="relative">
+          <img src={props.img} alt="" />
+          <div className="top-2 absolute bg-white py-1 px-2 rounded-sm  ml-2">
+            {props.status}
+          </div>
         </div>
         <div>
           <div className="flex">
-            <img src="/assets/star1.svg" alt="" />
-            <p>5.0 (6) USA</p>
+            <img src="/assets/Star1.svg" alt="star" />
+            <p>
+              {props.rate} <span className="text-gray-400 font-thin">{props.country}</span>
+            </p>
           </div>
-          <p>Life lessons with Katie Zaferes</p>
-          <p>
-            <span>From $136</span> / person
+          <p>{props.title}</p>
+          <p className="font-thin text-gray-400">
+            <span className="font-bold text-black">{props.amount}</span> {props.person}
           </p>
         </div>
       </div>
