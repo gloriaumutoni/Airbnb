@@ -4,26 +4,22 @@ import Navbar from "./navbar.jsx";
 import data from "./data.js";
 
 function App() {
-  let cards=data.map(item=>{
+ 
+  let cards = data.map((item) => {
     return (
-      <Cards 
-         img={`/assets/${item.coverImg}`}
-         status={item.location}
-         rate={5.0}
-         country={`${item.stats.rating} (${item.stats.reviewCount}) USA`}
-         title={item.title}
-         amount={`From ${item.price}`}
-         person='/ person'
-        />
-    )
-  })
+      <Cards
+        key = {item.id}
+        item={item}
+      />
+    );
+  });
   return (
     <div>
       <div className="bg-white w-[32%] mx-auto rounded-md">
-      <Navbar/>
+        <Navbar />
         <div className="flex gap-3 h-[298px]">
-        {cards}
-         {/* <Cards 
+          {cards}
+          {/* <Cards 
          img='/assets/wedding-photography1.svg'
          status='ONLINE'
          rate={5.0}

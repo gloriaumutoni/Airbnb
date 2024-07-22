@@ -1,23 +1,30 @@
 const Cards = (props) => {
+  let badge;
+  if (props.item.openSpots === 0) {
+    badge = "SOLD OUT";
+  } else if (props.item.location === "Online") {
+    badge = "Online";
+  }
   return (
     <div className="flex">
       <div className="bg-white">
         <div className="relative">
-          <img src={props.img} alt="" />
-          <div className="top-2 absolute bg-white py-1 px-2 rounded-sm  ml-2">
-            {props.status}
-          </div>
+          <img src={`assets/${props.item.coverImg}`} alt="" />
+          {badge && <div className="top-2 absolute bg-white py-1 px-2 rounded-sm  ml-2">{badge}</div>}
         </div>
         <div>
           <div className="flex">
             <img src="/assets/Star1.svg" alt="star" />
             <p>
-              {props.rate} <span className="text-gray-400 font-thin">{props.country}</span>
+              {props.item.stats.rating}
+              <span className="text-gray-400 font-thin">{`(${props.item.stats.reviewCount})`}</span>
             </p>
+            <p>{props.item.location}</p>
           </div>
-          <p>{props.title}</p>
+          <p>{props.item.title}</p>
           <p className="font-thin text-gray-400">
-            <span className="font-bold text-black">{props.amount}</span> {props.person}
+            <span className="font-bold text-black">{`From $${props.item.price}`}</span>
+            /person
           </p>
         </div>
       </div>
